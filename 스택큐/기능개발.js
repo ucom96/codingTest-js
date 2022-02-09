@@ -15,8 +15,6 @@ function solution(progresses, speeds) {
     if ((100 - progresses[i]) % speeds[i] !== 0) {
       next = Math.floor(next) + 1;
     }
-    console.log("first", first);
-    console.log("next", next);
     //배포기간 비교
     if (first >= next) {
       answer[k] += 1;

@@ -3,30 +3,23 @@ function solution(priorities, location) {
 
   let queue = priorities.map((priority, idx) => ({
     priority: priority,
-    idx: idx,
+    target: idx === location, //target: boolean 값
   }));
 
   let cnt = 0;
 
-  while (queue.length) {
-    let doc = queue.shift();
+  while (true) {
+    let doc = queue.splice(0, 1)[0];
 
-    if (queue.some((info) => doc.priority < info.priority)) {
+    if (queue.some((rest) => doc.priority < rest.priority)) {
       queue.push(doc);
     } else {
       cnt++;
-      if (doc.idx == location) {
-        answer = cnt;
-        break;
-      }
+      if (doc.target) return cnt;
     }
   }
-
-  return answer;
 }
 
-/*
 const priorities = [2, 1, 3, 2];
 const location = 2;
 console.log(solution(priorities, location));
-*/

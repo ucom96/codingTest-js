@@ -10,6 +10,7 @@ function solution(n, lost, reserve) {
     num: item,
     gave: false,
   }));
+  //체육복이 도난당했을 경우 고려하기
 
   //반복: reserve 수만큼 하나씩 돌아가며 체육복을 줄 수 있는지의 여부를 확인
   for (let i = 0; i < reserve.length; i++) {

@@ -12,8 +12,7 @@ function solution(N, number) {
       .filter((el, idx) => el === cnt)
       .forEach((el, idx) => {
         if (numbers[idx] === undefined) {
-          cnt++;
-          numbers[idx + 5] = cnt;
+          numbers[idx + 5] = cnt + 1;
         }
       });
   }
